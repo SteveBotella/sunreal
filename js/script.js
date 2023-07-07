@@ -1,6 +1,7 @@
 ﻿// Run only when document ready
 $(document).ready(function () {
     clearChildren("loaded");
+    window.location.href = "#home";
     if (document.body.classList.contains("home")) {
         addVideo();
     }

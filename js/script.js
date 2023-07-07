@@ -1,9 +1,13 @@
 ﻿// Run only when document ready
 $(document).ready(function () {
+
+    // Trigger on refresh/first visit
     clearChildren("loaded");
     window.location.href = "#home";
     if (document.body.classList.contains("home")) {
-        addVideo();
+
+        let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
+        addVideo(link);
     }
 
     // Clear the div you want
@@ -16,7 +20,7 @@ $(document).ready(function () {
     $("body").css({ "overflow": "visible" })
 
     //Add Video
-    function addVideo() {
+    function addVideo(link) {
         let loaded = document.getElementById("loaded");
         let newYTVideo = document.createElement("div");
         let newYTVideoIframe = document.createElement("iframe");
@@ -24,7 +28,8 @@ $(document).ready(function () {
         newYTVideo.id = "headerVideo";
 
         newYTVideoIframe.classList.add("video");
-        newYTVideoIframe.src = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
+        newYTVideoIframe.src = link;
+        newYTVideoIframe.frameBorder = 0;
 
         newYTVideo.appendChild(newYTVideoIframe);
 
@@ -49,7 +54,9 @@ $(document).ready(function () {
     $("#sunrealLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("sunreal");
-        addVideo();
+
+        let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
+        addVideo(link);
     });
 
     $("#news").on("click", function () {

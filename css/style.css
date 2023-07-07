@@ -32,6 +32,44 @@ nav {
         align-items: center;
     }
 
+        nav li.sunrealLogo {
+            display: inline-flex;
+            margin-left: 2em;
+            width: 3em;
+            height: 3em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li.twitch {
+            display: inline-flex;
+            margin-right: 0;
+            width: 3em;
+            height: 3em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li.youtube {
+            display: inline-flex;
+            margin-right: 0;
+            margin-left: 1em;
+            width: 3em;
+            height: 3em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li.linkedin {
+            display: inline-flex;
+            margin-right: 3em;
+            margin-left: 1em;
+            width: 3em;
+            height: 3em;
+            justify-content: center;
+            align-items: center;
+        }
+
     nav a {
         font-family: "Montserrat", sans-serif;
         font-size: 1.5em;
@@ -52,21 +90,21 @@ nav {
         background-color: rgba(0, 0, 0, 0.1);
     }
 
-    nav img#sunrealLogo {
-        display: flex;
-        height: 100px;
-        width: 100px;
-        border-radius: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-    
-    nav img:hover {
-        box-shadow: 0px 0px 25px #fff;
-    }
+        nav img#sunrealLogo {
+            display: flex;
+            height: 100px;
+            width: 100px;
+            border-radius: 60px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
 
-    nav img#sunrealLogo:hover {
-        box-shadow: 0px 0px 50px #fff;
-    }
+        nav img:hover {
+            box-shadow: 0px 0px 25px #fff;
+        }
+
+        nav img#sunrealLogo:hover {
+            box-shadow: 0px 0px 50px #fff;
+        }
 
 .innercircle {
     display: flex;
@@ -113,6 +151,9 @@ nav {
     height: 100%;
     width: 100%;
     background-size: auto;
+    border: solid;
+    border-width: 0;
+    border-color: white;
 }
 
 /********** WAVES **********/

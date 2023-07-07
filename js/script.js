@@ -36,6 +36,24 @@ $(document).ready(function () {
         loaded.appendChild(newYTVideo);
     }
 
+    // Add Twitch
+    function addTwitch() {
+        let loaded = document.getElementById("loaded");
+        let newTwitchVideo = document.createElement("div");
+
+        newTwitchVideo.id = "twitch-embed";
+        
+        loaded.appendChild(newTwitchVideo);
+
+        new Twitch.Embed("twitch-embed", {
+            channel: "steve_ue"
+        });
+
+        let iframe = document.getElementById("twitch-embed").firstElementChild;
+        iframe.classList.add("video");
+    } 
+
+
     // Change active page
     function requireWhenClickNav(id) {
         let link = $("nav a");
@@ -49,8 +67,10 @@ $(document).ready(function () {
     }
 
     // --- EVENTS ---
-    // Button Home
 
+    // Buttons
+
+    // Home
     $("#sunrealLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("sunreal");
@@ -59,31 +79,38 @@ $(document).ready(function () {
         addVideo(link);
     });
 
+    // News
     $("#news").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("news");
     });
 
+    // Marketplace
     $("#marketplace").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("marketplace");
     });
 
+    // Tutorials
     $("#tutorials").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("tutorials");
     });
 
+    // Twitch
     $("#twitchLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("twitch");
+        addTwitch();
     });
 
+    // Youtube
     $("#ytLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("youtube");
     });
 
+    // Linkedin
     $("#linkedinLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("linkedin");

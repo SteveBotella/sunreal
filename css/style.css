@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0e6cc4;
+    background-color: rgba(14, 108, 196, 1);
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -141,7 +141,16 @@ nav {
     width: 55em;
     margin: auto;
     margin-top: 2em;
-    background-color: rgba(0, 0, 0, 0.90);
+    /*background-color: rgba(0, 0, 0, 0.90);*/
+    justify-content: center;
+
+}
+#twitch-embed {
+    height: 30em;
+    width: 55em;
+    margin: auto;
+    margin-top: 2em;
+    /*background-color: rgba(0, 0, 0, 0.90);*/
     justify-content: center;
 }
 
@@ -152,8 +161,8 @@ nav {
     width: 100%;
     background-size: auto;
     border: solid;
-    border-width: 0;
-    border-color: white;
+    border-width: 0.5em;
+    border-color: rgba(32, 172, 215, 0.3);
 }
 
 /********** WAVES **********/

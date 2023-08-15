@@ -1,4 +1,5 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton:wght@400;500;600;700&display=swap");
 
 body {
     margin: 0;
@@ -9,18 +10,24 @@ body {
 }
 
 nav {
+    position: fixed;
     display: flex;
-    width: auto;
+    width: 100%;
+    height: 4em;
     justify-content: center;
+    z-index: 1000;
+    background-color: rgba(10, 30, 61, 0.75);
+    
 }
 
     nav ul {
         display: flex;
         width: 100%;
         height: 100%;
-        margin-top: 3.8em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         justify-content: space-between;
-        background-color: rgba(10, 30, 61, 0.3);
+        background-color: rgba(0, 0, 0, 0.75);
     }
 
     nav li {
@@ -33,12 +40,21 @@ nav {
     }
 
         nav li.sunrealLogo {
-            display: inline-flex;
+            display: flex;
             margin-left: 2em;
-            width: 3em;
-            height: 3em;
+            width: 2em;
+            height: 2em;
             justify-content: center;
             align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        nav li a#sunreal {
+            position: absolute;
+            top: 75%;
+            font-family: "Anton", sans-serif;
+            font-size: 0.7em;
         }
 
         nav li.twitch {
@@ -92,8 +108,8 @@ nav {
 
         nav img#sunrealLogo {
             display: flex;
-            height: 100px;
-            width: 100px;
+            height: 75px;
+            width: 75px;
             border-radius: 60px;
             background-color: rgba(0, 0, 0, 0.1);
         }
@@ -111,7 +127,7 @@ nav {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #0a1e3d;
+    background-color: #14376e;
     align-items: center;
     justify-content: center;
 }
@@ -137,6 +153,10 @@ nav {
         box-shadow: 0px 0px 25px #1755aa;
     }
 
+#loaded {
+    padding-top: 7em;
+}
+
 .headerVideo {
     height: 50em;
     width: 75em;
@@ -144,7 +164,6 @@ nav {
     margin-top: 2em;
     /*background-color: rgba(0, 0, 0, 0.90);*/
     justify-content: center;
-
 }
 #twitch-embed {
     height: 50em;

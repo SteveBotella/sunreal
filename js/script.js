@@ -5,9 +5,7 @@ $(document).ready(function () {
     clearChildren("loaded");
     window.location.href = "#home";
     if (document.body.classList.contains("home")) {
-
-        let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
-        addVideo(link);
+        firstVisit();
     }
 
     // Clear the div you want
@@ -19,13 +17,43 @@ $(document).ready(function () {
     // Enable scrollbar
     $("body").css({ "overflow": "visible" })
 
-    //Add Video
+    // First visit
+    function firstVisit() {
+        clearChildren("loaded");
+        requireWhenClickNav("sunreal");
+
+        let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
+        addVideo(link);
+
+        link = "https://www.youtube.com/embed/09a9jQLobn8?autoplay=1&mute=1";
+        addVideo(link);
+
+        linebreak = document.createElement("br");
+        let title = "truc";
+        let text = "machin, chose et encore.";
+        link = "https://youtu.be/BwBVEB3jGLs?list=PLTnzHtXwzO_Ip-NU4wPLXS6ooMOVePU9n";
+        let linkName = "Rosalia";
+        addText(title, text, link, linkName, "imgTruc", "img/SunrealLogo.png");
+    }
+
+    // Add Img
+    function addImg(imgName, imgSrc, slot) {
+        let img = document.createElement("img");
+
+        img.classList.add("textImg");
+        img.id = imgName;
+        img.src = imgSrc;
+
+        slot.appendChild(img)
+    }
+
+    // Add Video
     function addVideo(link) {
         let loaded = document.getElementById("loaded");
         let newYTVideo = document.createElement("div");
         let newYTVideoIframe = document.createElement("iframe");
 
-        newYTVideo.id = "headerVideo";
+        newYTVideo.className = "headerVideo";
 
         newYTVideoIframe.classList.add("video");
         newYTVideoIframe.src = link;
@@ -66,17 +94,63 @@ $(document).ready(function () {
         $this.addClass("active");
     }
 
+    // Add text with optional title & link
+    function addText(title, text, link = "", linkName = "Lien", imgName = "", imgSrc = "") {
+        let loaded = document.getElementById("loaded");
+        let textArea = document.createElement("div");
+        let titleElement = document.createElement("h2");
+        let textElement = document.createElement("p");
+
+        loaded.appendChild(textArea);
+        textArea.appendChild(titleElement);
+        textArea.appendChild(textElement);
+        textArea.appendChild(textElement);
+
+        textArea.classList.add("textarea");
+
+        titleElement.textContent += title.toUpperCase();
+        textElement.textContent += text;
+
+        if (imgName !== "" || imgSrc !== "") {
+            addImg(imgName, imgSrc, textArea);
+        }
+
+        if (link !== "") {
+            buttonLink(link, linkName, textArea);
+        }
+    }
+
+    // Button link
+    function buttonLink(btnLink, btnTitle, slot) {
+        let divbtnconteiner = document.createElement("div");
+        let abtncontent = document.createElement("a");
+        let spanbtntitle = document.createElement("span");
+        let spaniconarrow = document.createElement("span");
+        let img = document.createElement("img");
+
+        slot.appendChild(divbtnconteiner);
+        divbtnconteiner.appendChild(abtncontent);
+        abtncontent.appendChild(spanbtntitle);
+        abtncontent.appendChild(spaniconarrow);
+        spaniconarrow.appendChild(img);
+
+        divbtnconteiner.classList.add("btn-conteiner");
+        abtncontent.classList.add("btn-content");
+        abtncontent.href = btnLink;
+        abtncontent.target = "_blank";
+        spanbtntitle.classList.add("btn-title");
+        spanbtntitle.textContent = btnTitle;
+        img.classList.add("btnarrow");
+        img.src = "img/right-arrow.png";
+    }
+
     // --- EVENTS ---
 
     // Buttons
 
     // Home
     $("#sunrealLogo").on("click", function () {
-        clearChildren("loaded");
-        requireWhenClickNav("sunreal");
-
-        let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
-        addVideo(link);
+        firstVisit();
     });
 
     // News
@@ -91,10 +165,10 @@ $(document).ready(function () {
         requireWhenClickNav("marketplace");
     });
 
-    // Tutorials
-    $("#tutorials").on("click", function () {
+    // Documentations
+    $("#documentations").on("click", function () {
         clearChildren("loaded");
-        requireWhenClickNav("tutorials");
+        requireWhenClickNav("documentations");
     });
 
     // Twitch

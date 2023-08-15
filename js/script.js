@@ -17,7 +17,7 @@ $(document).ready(function () {
     // Enable scrollbar
     $("body").css({ "overflow": "visible" })
 
-    //First visit
+    // First visit
     function firstVisit() {
         clearChildren("loaded");
         requireWhenClickNav("sunreal");
@@ -33,10 +33,21 @@ $(document).ready(function () {
         let text = "machin, chose et encore.";
         link = "https://youtu.be/BwBVEB3jGLs?list=PLTnzHtXwzO_Ip-NU4wPLXS6ooMOVePU9n";
         let linkName = "Rosalia";
-        addText(title, text, link, linkName);
+        addText(title, text, link, linkName, "imgTruc", "img/SunrealLogo.png");
     }
 
-    //Add Video
+    // Add Img
+    function addImg(imgName, imgSrc, slot) {
+        let img = document.createElement("img");
+
+        img.classList.add("textImg");
+        img.id = imgName;
+        img.src = imgSrc;
+
+        slot.appendChild(img)
+    }
+
+    // Add Video
     function addVideo(link) {
         let loaded = document.getElementById("loaded");
         let newYTVideo = document.createElement("div");
@@ -84,7 +95,7 @@ $(document).ready(function () {
     }
 
     // Add text with optional title & link
-    function addText(title, text, link = "", linkName = "Lien") {
+    function addText(title, text, link = "", linkName = "Lien", imgName = "", imgSrc = "") {
         let loaded = document.getElementById("loaded");
         let textArea = document.createElement("div");
         let titleElement = document.createElement("h2");
@@ -97,8 +108,12 @@ $(document).ready(function () {
 
         textArea.classList.add("textarea");
 
-        titleElement.textContent += title;
+        titleElement.textContent += title.toUpperCase();
         textElement.textContent += text;
+
+        if (imgName !== "" || imgSrc !== "") {
+            addImg(imgName, imgSrc, textArea);
+        }
 
         if (link !== "") {
             buttonLink(link, linkName, textArea);

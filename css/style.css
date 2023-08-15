@@ -196,6 +196,15 @@ nav {
         text-align: center;
     }
 
+    .textarea .textImg {
+        max-height: 30em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
 /******** BUTON LINK *******/
 .btn-conteiner {
     display: flex;

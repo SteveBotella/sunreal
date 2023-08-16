@@ -95,8 +95,12 @@ nav {
     }
 
         nav a.active {
-            -webkit-animation: bounce 1.5s ease infinite alternate;
+            color: aquamarine;
         }
+
+            nav a.active.bouncy {
+                -webkit-animation: bounce 1.5s ease infinite alternate;
+            }
 
     nav img {
         display: flex;

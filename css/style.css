@@ -282,6 +282,196 @@ nav {
 }
 /****** END BUTON LINK *****/
 
+/******** DOCUCARD *********/
+.docCardParent {
+    position: relative;
+    width: 290px;
+    height: 300px;
+    perspective: 1000px;
+    z-index: 1000;
+}
+
+.docCard {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(15, 40, 74) 0%, rgb(23, 85, 170) 100%);
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px, rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
+}
+
+.docCardGlass {
+    transform-style: preserve-3d;
+    position: absolute;
+    inset: 8px;
+    border-radius: 55px;
+    border-top-right-radius: 100%;
+    background: linear-gradient(0deg, rgba(35, 35, 35, 0.349) 0%, rgba(55, 55, 55, 0.815) 100%);
+    transform: translate3d(0px, 0px, 25px);
+    border-left: 1px solid rgba(55, 55, 55, 0.815);
+    border-bottom: 1px solid rgba(55, 55, 55, 0.815);
+    transition: all 0.5s ease-in-out;
+}
+
+.docCardContent {
+    padding: 60px 60px 0px 30px;
+    transform: translate3d(0, 0, 26px);
+}
+
+    .docCardContent .docCardTitle {
+        display: block;
+        color: #317ae0;
+        font-weight: 900;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .docCardContent .docCardText {
+        display: block;
+        margin-top: 5px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        color: #dde5eb;
+    }
+
+.docCardContentimg {
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 200px;
+}
+
+.docCardBottom {
+    padding: 10px 12px;
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translate3d(0, 0, 26px);
+}
+
+    .docCardBottom .docCardViewMore {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        justify-content: flex-end;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .docCardBottom .docCardViewMore:hover {
+        transform: translate3d(0, 0, 10px);
+    }
+
+        .docCardBottom .docCardViewMore .docCardViewMoreButton {
+            background: none;
+            border: none;
+            color: #317ae0;
+            font-weight: bolder;
+            font-size: 12px;
+        }
+
+        .docCardBottom .docCardViewMore img {
+            fill: none;
+            stroke: #317ae0;
+            stroke-width: 3px;
+            max-height: 15px;
+        }
+
+.docCardLogo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-style: preserve-3d;
+}
+
+    .docCardLogo .docCardCircle {
+        display: block;
+        position: absolute;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background: rgba(58, 106, 171, 0.2);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .docCardLogo .docCardCircle1 {
+        width: 170px;
+        transform: translate3d(0, 0, 20px);
+        top: 8px;
+        right: 8px;
+    }
+
+    .docCardLogo .docCardCircle2 {
+        width: 140px;
+        transform: translate3d(0, 0, 40px);
+        top: 10px;
+        right: 10px;
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
+        transition-delay: 0.4s;
+    }
+
+    .docCardLogo .docCardCircle3 {
+        width: 110px;
+        transform: translate3d(0, 0, 60px);
+        top: 17px;
+        right: 17px;
+        transition-delay: 0.8s;
+    }
+
+    .docCardLogo .docCardCircle4 {
+        width: 80px;
+        transform: translate3d(0, 0, 80px);
+        top: 23px;
+        right: 23px;
+        transition-delay: 1.2s;
+    }
+
+    .docCardLogo .docCardCircle5 {
+        width: 50px;
+        transform: translate3d(0, 0, 100px);
+        top: 30px;
+        right: 30px;
+        display: grid;
+        place-content: center;
+        transition-delay: 1.6s;
+    }
+
+        .docCardLogo .docCardCircle5 .svg {
+            width: 20px;
+            fill: white;
+        }
+
+.docCardParent:hover .docCard {
+    transform: rotate3d(1, 1, 0, 30deg);
+    box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
+}
+
+    .docCardParent:hover .docCard .docCardLogo .docCardCircle2 {
+        transform: translate3d(0, 0, 60px);
+    }
+
+    .docCardParent:hover .docCard .docCardLogo .docCardCircle3 {
+        transform: translate3d(0, 0, 80px);
+    }
+
+    .docCardParent:hover .docCard .docCardLogo .docCardCircle4 {
+        transform: translate3d(0, 0, 100px);
+    }
+
+    .docCardParent:hover .docCard .docCardLogo .docCardCircle5 {
+        transform: translate3d(0, 0, 120px);
+    }
+/****** END DOCUCARD *********/
+
 /********** WAVES **********/
 .box {
     position: fixed;

@@ -116,12 +116,12 @@ $(document).ready(function () {
         }
 
         if (link !== "") {
-            buttonLink(link, linkName, textArea);
+            addButtonLink(link, linkName, textArea);
         }
     }
 
     // Button link
-    function buttonLink(btnLink, btnTitle, slot) {
+    function addButtonLink(btnLink, btnTitle, slot) {
         let divbtnconteiner = document.createElement("div");
         let abtncontent = document.createElement("a");
         let spanbtntitle = document.createElement("span");
@@ -142,6 +142,97 @@ $(document).ready(function () {
         spanbtntitle.textContent = btnTitle;
         img.classList.add("btnarrow");
         img.src = "img/right-arrow.png";
+    }
+
+    // Doc Card
+    function addDocCard(logo, img, title, text, link, slot) {
+        let docCardParent = document.createElement("div");
+        let docCard = document.createElement("div");
+        let docCardAHref = document.createElement("a");
+        let docCardLogo = document.createElement("div");        
+        let docCardCircle1 = document.createElement("span");
+        let docCardCircle2 = document.createElement("span");
+        let docCardCircle3 = document.createElement("span");
+        let docCardCircle4 = document.createElement("span");
+        let docCardCircle5 = document.createElement("span");        
+        let docCardImgLogo = document.createElement("img");        
+        let docCardGlass = document.createElement("div");
+        let docCardContent = document.createElement("div");
+        let docCardTitle = document.createElement("span");
+        let docCardText = document.createElement("span");
+        let docCardBottom = document.createElement("div");
+        let docCardViewMore = document.createElement("div");
+        let docCardViewMoreButton = document.createElement("button");
+        let docCardImgArrow = document.createElement("img");
+        let docCardContentimg = document.createElement("img");
+        let docCardContentext = document.createElement("span");
+
+        slot.appendChild(docCardParent);
+        docCardParent.appendChild(docCardAHref);
+        docCardAHref.appendChild(docCard);
+        docCard.appendChild(docCardContent);
+        docCard.appendChild(docCardLogo);
+        docCardLogo.appendChild(docCardCircle1);
+        docCardLogo.appendChild(docCardCircle2);
+        docCardLogo.appendChild(docCardCircle3);
+        docCardLogo.appendChild(docCardCircle4);
+        docCardLogo.appendChild(docCardCircle5);
+        docCardCircle5.appendChild(docCardImgLogo);
+        docCard.appendChild(docCardGlass);        
+        docCardContent.appendChild(docCardTitle);
+        docCardContent.appendChild(docCardText);
+        docCardText.appendChild(docCardContentimg);
+        docCardText.appendChild(docCardContentext);
+        docCard.appendChild(docCardBottom);
+        docCardBottom.appendChild(docCardViewMore);
+        docCardViewMore.appendChild(docCardViewMoreButton);
+        docCardViewMore.appendChild(docCardImgArrow);
+
+        docCardParent.classList.add("docCardParent");
+
+        docCard.classList.add("docCard");
+        docCardAHref.href = link;
+        docCardAHref.target = "_blank";
+
+        docCardLogo.classList.add("docCardLogo");
+        docCardCircle1.classList.add("docCardCircle");
+        docCardCircle1.classList.add("docCardCircle1");
+        docCardCircle2.classList.add("docCardCircle");
+        docCardCircle2.classList.add("docCardCircle2");
+        docCardCircle3.classList.add("docCardCircle");
+        docCardCircle3.classList.add("docCardCircle3");
+        docCardCircle4.classList.add("docCardCircle");
+        docCardCircle4.classList.add("docCardCircle4");
+        docCardCircle5.classList.add("docCardCircle");
+        docCardCircle5.classList.add("docCardCircle5");
+
+
+        // Logo
+        docCardImgLogo.classList.add("docCardImgLogo");
+        docCardImgLogo.src = logo;
+
+        docCardGlass.classList.add("docCardGlass");
+        docCardContent.classList.add("docCardContent");
+
+        // Title
+        docCardTitle.classList.add("docCardTitle");
+        docCardTitle.textContent = title;
+
+        // Text & Img
+
+        docCardContentimg.classList.add("docCardContentimg");
+        docCardContentimg.src = img;
+        docCardText.classList.add("docCardText");
+        docCardContentext.textContent = text;
+
+        docCardBottom.classList.add("docCardBottom");
+        docCardViewMore.classList.add("docCardViewMore");
+
+        docCardViewMoreButton.classList.add("docCardViewMoreButton");
+        docCardViewMoreButton.textContent = "View more";
+
+        docCardImgArrow.classList.add("docCardImgArrow");
+        docCardImgArrow.src = "img/downarrow.png";
     }
 
     // --- EVENTS ---
@@ -170,6 +261,8 @@ $(document).ready(function () {
     $("#documentations").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("documentations");
+        let loaded = document.getElementById("loaded");
+        addDocCard("img/UELogo.png", "img/youtube.png", "Epic Boot Camp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4", loaded);
     });
 
     // Twitch

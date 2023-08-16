@@ -149,7 +149,8 @@ $(document).ready(function () {
     // Buttons
 
     // Home
-    $("#sunrealLogo").on("click", function () {
+    $(".sunrealLogo").on("click", function () {
+        document.location.href = "#home";
         firstVisit();
     });
 

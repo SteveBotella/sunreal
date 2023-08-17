@@ -235,6 +235,48 @@ $(document).ready(function () {
         docCardImgArrow.src = "img/downarrow.png";
     }
 
+    // GALLERY
+    // Create an array of all images we want
+    let isGalleryColumn = false;
+    let galleryImages =
+        [
+        ];
+    let galleryImagesUser = [
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+    ];
+
+    // Add all images (from array) to the div
+    function addGallery() {
+        let mainGallery = document.createElement("div");
+        mainGallery.setAttribute("class", "mainGallery");
+        $("#loaded").append(mainGallery);
+
+        galleryIndex = 0;
+
+        for (galleryIndex; galleryIndex < galleryImagesUser.length; galleryIndex++) {
+            let divImageUser = document.createElement("div");
+
+            addDocCard(galleryImagesUser[galleryIndex][0],
+                galleryImagesUser[galleryIndex][1],
+                galleryImagesUser[galleryIndex][2],
+                galleryImagesUser[galleryIndex][3],
+                galleryImagesUser[galleryIndex][4],
+                divImageUser);
+
+            divImageUser.setAttribute("class", "galleryImageDivUser");
+            divImageUser.setAttribute("id", "galleryImageDivUser" + galleryIndex);
+
+           
+            $(".mainGallery").append(divImageUser);
+        };
+    };
+
     // --- EVENTS ---
 
     // Buttons
@@ -261,8 +303,8 @@ $(document).ready(function () {
     $("#documentations").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("documentations");
-        let loaded = document.getElementById("loaded");
-        addDocCard("img/UELogo.png", "img/youtube.png", "Epic Boot Camp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4", loaded);
+
+        addGallery();
     });
 
     // Twitch

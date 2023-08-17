@@ -25,15 +25,10 @@ $(document).ready(function () {
         let link = "https://www.youtube.com/embed/cLaoQaIf7rs?autoplay=1&mute=1";
         addVideo(link);
 
-        link = "https://www.youtube.com/embed/09a9jQLobn8?autoplay=1&mute=1";
-        addVideo(link);
-
         linebreak = document.createElement("br");
-        let title = "truc";
-        let text = "machin, chose et encore.";
-        link = "https://youtu.be/BwBVEB3jGLs?list=PLTnzHtXwzO_Ip-NU4wPLXS6ooMOVePU9n";
-        let linkName = "Rosalia";
-        addText(title, text, link, linkName, "imgTruc", "img/SunrealLogo.png");
+        let title = "Steve \"Sunreal\" Botella";
+        let text = "Passionné de création de jeux vidéo, je partage mon quotidien de développeur. Je suis fan de Blueprint, mais j'aime aussi tester les derniers logiciels. J'adore le partage de connaissances et d'expériences. N'hésite pas à venir en live et à me suivre sur les réseaux.";
+        addText(title, text, "", "", "imgSteve", "img/imgSteve.png");
     }
 
     // Add Img
@@ -237,18 +232,15 @@ $(document).ready(function () {
 
     // GALLERY
     // Create an array of all images we want
-    let isGalleryColumn = false;
-    let galleryImages =
-        [
-        ];
     let galleryImagesUser = [
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
-        ["img/UELogo.png", "img/youtube.png", "Epic Bootcamp 2023", "Create, sahre et partage ta vie de dev web alors que tu veux faire du UE !!!", "https://youtu.be/hFCjGiawJi4"],        
+        ["img/projectLogo.png", "img/youtubeMedievalCitizenImg.png", "Medieval Citizen", "Week-end partie teste avec 12 à 16 participants, merci à tous.", "https://www.youtube.com/watch?v=cLaoQaIf7rs"],        
+        ["img/projectLogo.png", "img/youtubeEpicBootcamp2023Img.png", "Epic Bootcamp 2023", "Projet d'animation crée lors du Epic Bootcamp 2023 par Epic Games et UT-HUB", "https://www.youtube.com/watch?v=09a9jQLobn8"],        
+        ["img/projectLogo.png", "img/youtubeRiftRPGImg.png", "Rift RPG", "Réplication de la physic des dés", "https://www.youtube.com/watch?v=q7nU_Ulrfys"],        
+        ["img/projectLogo.png", "img/youtubeGearCoreImg.png", "Gear Core", "Création d'un système de Parkour.", "https://www.youtube.com/watch?v=O8znQ1KoyZU"],        
+        ["img/projectLogo.png", "img/youtubeGearCoreRaceImg.png", "Gear Core Race", "Personnalisation de son bolide", "https://www.youtube.com/watch?v=Ot98Yy7hNJ8"],        
+        ["img/projectLogo.png", "img/youtubeGearCoreRaceV1Img.png", "Gear Core Race", "jeux de course multijoueur", "https://www.youtube.com/watch?v=9xvUUdEZG8g"],        
+        ["img/projectLogo.png", "img/youtubeShipProjectImg.png", "Ship Project", "Essais de gameplay immersif de pilotage de vaisseaux", "https://www.youtube.com/watch?v=mQwNfoePawU"],        
+        ["img/projectLogo.png", "img/youtubeAircraftImg.png", "Aircraft", "Essais de la physic 2D", "https://youtu.be/1hYl9P6sxTo"],        
     ];
 
     // Add all images (from array) to the div
@@ -291,18 +283,30 @@ $(document).ready(function () {
     $("#news").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("news");
+
+        let title = "Ouverture du site Sunreal";
+        let text = "L'aventure commence ! Première version de mon site internet. Les mises à jour seront faites chaque semaine.";
+        addText(title, text, "", "", "imgSuneal", "img/imgSunreal.png");
     });
 
     // Marketplace
     $("#marketplace").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("marketplace");
+
+        let title = "Marketplace";
+        let text = "Liens et informations concernant mon contenu disponible à l'achat et utilisable pour tes projets.";
+        addText(title, text);
     });
 
     // Documentations
     $("#documentations").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("documentations");
+
+        let title = "Documentations";
+        let text = "Tout le contenu disponible gratuitement, tutos, projets, replay, tips et découvertes.";
+        addText(title, text);
 
         addGallery();
     });
@@ -311,6 +315,11 @@ $(document).ready(function () {
     $("#twitchLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("twitch");
+
+        let title = "Twitch";
+        let text = "En live dev tous les Mardi & Vendredi 08h00 - 13h00, ainsi que les jeudi 19h30 - 00h30";
+        addText(title, text);
+
         addTwitch();
     });
 
@@ -318,11 +327,23 @@ $(document).ready(function () {
     $("#ytLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("youtube");
+
+        let title = "Youtube";
+        let text = "Toutes les dernières vidéos sont sur ma chaîne YouTube. Retrouve les tutos, partages d'expériences, documentations et autres moments forts de Twitch.";
+        link = "https://www.youtube.com/@zorukgaming/featured";
+        let linkName = "Youtube";
+        addText(title, text, link, linkName, "imgYoutube", "img/imgYoutube.png");
     });
 
     // Linkedin
     $("#linkedinLogo").on("click", function () {
         clearChildren("loaded");
         requireWhenClickNav("linkedin");
+
+        let title = "Linkedin";
+        let text = "Suivez les avancements de mes projets sur LinkedIn. N'hésite pas à me demander une connexion ou à m'envoyer un message.";
+        link = "https://www.linkedin.com/in/steve-botella-15a47a16a/";
+        let linkName = "Linkedin";
+        addText(title, text, link, linkName, "imgLinkedin", "img/imgLinkedin.png");
     });
 })

@@ -330,7 +330,7 @@ $(document).ready(function () {
 
         let title = "Youtube";
         let text = "Toutes les dernières vidéos sont sur ma chaîne YouTube. Retrouve les tutos, partages d'expériences, documentations et autres moments forts de Twitch.";
-        link = "https://www.youtube.com/@zorukgaming/featured";
+        link = "https://www.youtube.com/@steveunreal/featured";
         let linkName = "Youtube";
         addText(title, text, link, linkName, "imgYoutube", "img/imgYoutube.png");
     });

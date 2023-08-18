@@ -69,7 +69,7 @@ $(document).ready(function () {
         loaded.appendChild(newTwitchVideo);
 
         new Twitch.Embed("twitch-embed", {
-            channel: "steve_ue"
+            channel: "steve_sunreal"
         });
 
         let iframe = document.getElementById("twitch-embed").firstElementChild;

@@ -317,7 +317,7 @@ $(document).ready(function () {
         requireWhenClickNav("twitch");
 
         let title = "Twitch";
-        let text = "En live dev tous les Mardi & Vendredi 08h00 - 13h00, ainsi que les jeudi 19h30 - 00h30";
+        let text = "En live dev tous les Mardi, jeudi & Vendredi 09h00 - 13h00, également le mardi 17h00 - 19h00";
         addText(title, text);
 
         addTwitch();
